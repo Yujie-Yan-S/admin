@@ -1,9 +1,6 @@
 // ** MUI Imports
 
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
-import CardHeader from '@mui/material/CardHeader'
-import CardContent from '@mui/material/CardContent'
+
 import {
   Container,
   Dialog,
@@ -11,7 +8,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Pagination, Slide
+  Pagination, Slide,
 } from "@mui/material";
 import Card from "./components/course_card";
 import Box from "@mui/material/Box";
@@ -36,9 +33,6 @@ const Home = () => {
    ]
 
 
-  const Transition = forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
 
     const [page, setPage] = useState(1);
 
@@ -76,7 +70,8 @@ return (
         })}
       <Dialog
         open={open}
-        TransitionComponent={Transition}
+
+
         keepMounted
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"

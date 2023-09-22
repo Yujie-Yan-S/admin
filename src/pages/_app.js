@@ -33,6 +33,10 @@ import GuestGuard from 'src/@core/components/auth/GuestGuard'
 // ** Spinner Import
 import Spinner from 'src/@core/components/spinner'
 
+// ** redux
+import { store } from '../store/index'
+
+
 // ** Contexts
 import { AuthProvider } from 'src/context/AuthContext'
 import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
@@ -55,6 +59,7 @@ import 'src/iconify-bundle/icons-bundle-react'
 
 // ** Global css styles
 import '../../styles/globals.css'
+import {Provider} from "react-redux";
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -96,7 +101,8 @@ const App = props => {
   const aclAbilities = Component.acl ?? defaultACLObj
 
   return (
-    
+    <Provider store={store}>
+
       <CacheProvider value={emotionCache}>
         <Head>
           <title>{`${themeConfig.templateName} - Material Design React Admin Template`}</title>
@@ -129,7 +135,9 @@ const App = props => {
           </SettingsProvider>
         </AuthProvider>
       </CacheProvider>
-   
+    </Provider>
+
+
   )
 }
 

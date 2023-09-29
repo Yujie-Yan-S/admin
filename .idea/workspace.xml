@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b1f3c0c-e2f0-4a02-91c3-6ddd160850f7" name="Changes" comment="finished the course admin">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jupyter-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/second-page/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/components/course_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/course_card.js" afterDir="false" />
-    </list>
+    <list default="true" id="3b1f3c0c-e2f0-4a02-91c3-6ddd160850f7" name="Changes" comment="add the delete confirmation for course delete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +174,7 @@
       <workItem from="1695425057992" duration="99000" />
       <workItem from="1695425174916" duration="811000" />
       <workItem from="1695858357003" duration="273000" />
-      <workItem from="1696020272214" duration="821000" />
+      <workItem from="1696020272214" duration="1114000" />
     </task>
     <task id="LOCAL-00001" summary="finished the base page and dialog">
       <option name="closed" value="true" />
@@ -215,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695423443703</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add the delete confirmation for course delete">
+      <option name="closed" value="true" />
+      <created>1696021132857</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696021132857</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +233,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>
@@ -253,6 +254,7 @@
     <MESSAGE value="finished the base page and dialog" />
     <MESSAGE value="waiting for data connection" />
     <MESSAGE value="finished the course admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished the course admin" />
+    <MESSAGE value="add the delete confirmation for course delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="add the delete confirmation for course delete" />
   </component>
 </project>

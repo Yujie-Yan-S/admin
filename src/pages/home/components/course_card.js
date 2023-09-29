@@ -7,8 +7,20 @@ import axios from "axios";
 import IconButton from "@mui/material/IconButton";
 import {useDispatch} from "react-redux";
 import {fetchCourseList} from "../../../store/features/courses/coursesSlice";
+import {Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
+import {useState} from "react";
 
 const Card = (props)=>{
+
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const dispatch = useDispatch()
     const {onclick, id, name, programid, tutorid, description, imgCoverUrl} = props
@@ -24,6 +36,9 @@ const Card = (props)=>{
         });
     }
 
+
+
+
 return(
         <Paper   sx={{display:"flex",  py:4,
           '&:hover':{bgcolor:'#f7f7f8'}
@@ -36,12 +51,33 @@ return(
             <Box onClick={onclick}  width={"25%"}display={"flex"} justifyContent={"center"}>{imgCoverUrl}</Box>
           <Box width={"5%"} display={"flex"} justifyContent={"center"}>
             <IconButton
-              onClick={handleDelete}
+              onClick={handleClickOpen}
             >
               <DeleteIcon/>
             </IconButton>
           </Box>
+
+
+
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="draggable-dialog-title"
+          >
+            <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
+              Do you want delete course {name}
+            </DialogTitle>
+
+            <DialogActions>
+              <Button autoFocus onClick={handleClose}>
+                Cancel
+              </Button>
+              <Button onClick={handleDelete}>Confirm</Button>
+            </DialogActions>
+          </Dialog>
+
         </Paper>
+
     )
 
 }

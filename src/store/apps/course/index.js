@@ -2,11 +2,16 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 import axios from 'axios'
 
-//get
-export const getAllCourse = createAsyncThunk('getAllCourse', async params => {
-  const response = await axios.get('/apps/invoice/invoices', {
-    params
-  })
+const initialState = {
+  courseListFromSearch: [],
+  totalPage: 16,
+  status: 'loading',
+  error: null
+}
+
+//get all
+export const fetchCourseBySearch = createAsyncThunk('courses/fetchCourseBySearch', async query => {
+  const response = await axios.get(`http://api.airobotoedu.com/api/course/get_course_list_by_search?${query}`)
 
   return response.data
 })
@@ -31,30 +36,58 @@ export const updateCourse = createAsyncThunk('appInvoice/fetchData', async param
 
 // delete
 export const deleteCourse = createAsyncThunk('appInvoice/deleteData', async (id, { getState, dispatch }) => {
-  const response = await axios.delete('/apps/invoice/delete', {
+  const response = await axios.get(`http://api.airobotoedu.com/api/course/admin/delete_course?id=${id}`, {
     data: id
   })
-  await dispatch(fetchData(getState().invoice.params))
-
-  return response.data
+  console.log()
+  dispatch(fetchCourseBySearch())
 })
 
-export const courseSlice = createSlice({
-  name: 'courseList',
-  initialState: {
-    data: [],
-    total: 1,
-    params: {},
-    allData: []
-  },
+const courseSlice = createSlice({
+  name: 'courses',
+  initialState,
   reducers: {},
   extraReducers: builder => {
-    builder.addCase(fetchData.fulfilled, (state, action) => {
-      state.data = action.payload.invoices
-      state.params = action.payload.params
-      state.allData = action.payload.allData
-      state.total = action.payload.total
-    })
+    builder
+      .addCase(fetchCourseBySearch.pending, state => {
+        state.status = 'loading'
+      })
+      .addCase(fetchCourseBySearch.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+
+        state.courseListFromSearch = action.payload.data.content
+        state.totalPage = action.payload.data.totalPages
+      })
+      .addCase(fetchCourseBySearch.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.error.message
+      })
+      .addCase(addNewCourse.pending, state => {
+        state.status = 'loading'
+      })
+      .addCase(addNewCourse.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+
+        state.courseListFromSearch = action.payload.data.content
+        state.totalPage = action.payload.data.totalPages
+      })
+      .addCase(addNewCourse.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.error.message
+      })
+      .addCase(deleteCourse.pending, state => {
+        state.status = 'loading'
+      })
+      .addCase(deleteCourse.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+
+        state.courseListFromSearch = action.payload.data.content
+        state.totalPage = action.payload.data.totalPages
+      })
+      .addCase(deleteCourse.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.error.message
+      })
   }
 })
 

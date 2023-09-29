@@ -3,12 +3,10 @@ import Box from '@mui/material/Box'
 
 const Card = props => {
   const { onclick, id, name, programid, tutorid, description, imgCoverUrl } = props
-  const a = 10
 
   return (
     <Paper
       onClick={onclick}
-      elevation={3}
       sx={{ display: 'flex', py: 4, '&:hover': { bgcolor: '#f7f7f8' } }}
       square
       variant='outlined'

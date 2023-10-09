@@ -3,31 +3,22 @@ import Box from '@mui/material/Box'
 import { IconButton } from '@mui/material'
 import { GridDeleteIcon } from '@mui/x-data-grid'
 import { useDispatch } from 'react-redux'
-import { fetchCourseBySearch } from 'src/store/apps/course'
+import { deleteUser } from 'src/store/apps/user'
 import EditIcon from '@mui/icons-material/Edit'
-import axios from 'axios'
 import { useRouter } from 'next/router'
 
-const Card = props => {
-  const router = useRouter()
+const UserCard = props => {
+  const { id, firstName, lastName, email, phoneNumber, role, setPage } = props
   const dispatch = useDispatch()
-  const { id, name, programid, tutorid, description, imgCoverUrl } = props
+  const router = useRouter()
 
   const handleDeleteClick = id => {
-    axios
-      .get(`http://api.airobotoedu.com/api/course/admin/delete_course?id=${id}`)
-      .then(response => {
-        // alert('Success')
-        dispatch(fetchCourseBySearch(`pageNum=0&pageSize=6`))
-      })
-      .catch(error => {
-        alert('Failed')
-      })
+    setPage(1)
+    dispatch(deleteUser(id))
   }
-
   const handleUpdateClick = id => {
-    console.log('course update triggered')
-    router.push(`home/edit/${id}`)
+    console.log('update triggered')
+    router.push(`user/edit/${id}`)
   }
 
   return (
@@ -40,18 +31,17 @@ const Card = props => {
       <Box width={'10%'} display={'flex'} justifyContent={'center'}>
         {id}
       </Box>
-      <Box width={'20%'} display={'flex'} justifyContent={'center'}>
-        {name}
+      <Box width={'15%'} display={'flex'} justifyContent={'center'}>
+        {firstName}
+      </Box>
+      <Box width={'15%'} display={'flex'} justifyContent={'center'}>
+        {lastName}
       </Box>
       <Box width={'20%'} display={'flex'} justifyContent={'center'}>
-        {programid}
+        {email}
       </Box>
-      <Box width={'10%'} display={'flex'} justifyContent={'center'}>
-        {tutorid}
-      </Box>
-      <Box width={'30%'} display={'flex'} justifyContent={'center'}>
-        {' '}
-        {description}
+      <Box width={'20%'} display={'flex'} justifyContent={'center'}>
+        {phoneNumber}
       </Box>
 
       <Box width={'20%'} display={'flex'} justifyContent={'center'}>
@@ -66,4 +56,4 @@ const Card = props => {
   )
 }
 
-export default Card
+export default UserCard

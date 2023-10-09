@@ -1,29 +1,28 @@
-// ** MUI Imports
-
 import { Pagination, Slide } from '@mui/material'
-import Card from './components/course_card'
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import { forwardRef, useEffect, useState } from 'react'
-import { fetchCourseBySearch } from 'src/store/apps/course'
 import { useDispatch, useSelector } from 'react-redux'
+import { getAllUser } from 'src/store/apps/user'
+import UserCard from './component/UserCard'
 
-const Home = () => {
+const User = () => {
   const [page, setPage] = useState(1)
-  const courseData = useSelector(state => state.course)
+  const userData = useSelector(state => state.users)
   const dispatch = useDispatch()
 
   useEffect(() => {
     const currentQuery = `pageNum=${page - 1}&pageSize=6`
 
-    dispatch(fetchCourseBySearch(currentQuery))
+    dispatch(getAllUser(currentQuery))
   }, [page])
 
+  console.log('page is', page)
   const Transition = forwardRef(function Transition(props, ref) {
     return <Slide direction='up' ref={ref} {...props} />
   })
 
-  const handleChange = (event, value) => {
+  const handlePageChange = (event, value) => {
     setPage(value)
   }
 
@@ -33,42 +32,45 @@ const Home = () => {
         <Box width={'10%'} display={'flex'} justifyContent={'center'}>
           id
         </Box>
-        <Box width={'20%'} display={'flex'} justifyContent={'center'}>
-          name
+        <Box width={'15%'} display={'flex'} justifyContent={'center'}>
+          firstName
+        </Box>
+        <Box width={'15%'} display={'flex'} justifyContent={'center'}>
+          lastName
         </Box>
         <Box width={'20%'} display={'flex'} justifyContent={'center'}>
-          programid
+          email
         </Box>
-        <Box width={'10%'} display={'flex'} justifyContent={'center'}>
-          tutorid
-        </Box>
-        <Box width={'30%'} display={'flex'} justifyContent={'center'}>
+        <Box width={'20%'} display={'flex'} justifyContent={'center'}>
           {' '}
-          description
+          phoneNumber
         </Box>
         <Box width={'20%'} display={'flex'} justifyContent={'center'}>
+          {' '}
           Action
         </Box>
       </Paper>
-      {courseData.courseListFromSearch.map((item, key) => {
+      {userData?.userList.map((item, key) => {
         return (
-          <Card
-            key={key}
-            id={item.id}
-            name={item.name}
-            programid={item.programid}
-            tutorid={item.tutorid}
-            description={item.description}
-            imgCoverUrl={item.imgCoverUrl}
-          ></Card>
+          <>
+            <UserCard
+              id={item.id}
+              firstName={item.firstName}
+              lastName={item.lastName}
+              email={item.email}
+              phoneNumber={item.phoneNumber}
+              role={item.role}
+              setPage={setPage}
+            />
+          </>
         )
       })}
 
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', padding: 2, pt: 5 }}>
-        <Pagination count={courseData.totalPage} page={page} onChange={handleChange} />
+        <Pagination count={userData?.totalPage} page={page} onChange={handlePageChange} />
       </Box>
     </Box>
   )
 }
 
-export default Home
+export default User

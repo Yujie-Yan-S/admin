@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b1f3c0c-e2f0-4a02-91c3-6ddd160850f7" name="Changes" comment="add the delete confirmation for course delete">
-      <change afterPath="$PROJECT_DIR$/src/pages/home/edit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/horizontal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/horizontal/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/redux-version" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -183,7 +185,7 @@
       <workItem from="1696717475590" duration="32000" />
       <workItem from="1696718645335" duration="207000" />
       <workItem from="1696806763959" duration="1457000" />
-      <workItem from="1696894220605" duration="706000" />
+      <workItem from="1696894220605" duration="2580000" />
     </task>
     <task id="LOCAL-00001" summary="finished the base page and dialog">
       <option name="closed" value="true" />
@@ -225,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696021132857</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add the delete confirmation for course delete">
+      <option name="closed" value="true" />
+      <created>1696894955413</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696894955413</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +252,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/redux-version" />
                       </list>
                     </value>
                   </entry>

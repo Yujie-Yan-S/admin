@@ -1,6 +1,6 @@
 const navigation = () => [
   {
-    title: 'Home',
+    title: 'Course',
     path: '/home',
     icon: 'mdi:home-outline',
   },

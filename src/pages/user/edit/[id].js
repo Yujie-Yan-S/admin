@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateStudent, updateUser } from 'src/store/apps/user'
 import { useRouter } from 'next/router'
+import { updateCourse } from 'src/store/apps/course'
 
 const UserById = () => {
   const dispatch = useDispatch()
@@ -30,8 +31,8 @@ const UserById = () => {
   const errorCallback = () => {}
 
   const onSubmit = data => {
-    console.log('onSubmit triggered')
-    dispatch(updateUser({ user: data }))
+    dispatch(updateCourse({ user: data }))
+    router.push('/user')
   }
 
   return (

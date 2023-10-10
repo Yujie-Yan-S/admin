@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import { addNewStudent } from 'src/store/apps/user'
 import axios from 'axios'
+import { addNewCourse } from 'src/store/apps/course'
 
 const CreateCourse = () => {
   const dispatch = useDispatch()
@@ -21,17 +22,8 @@ const CreateCourse = () => {
   const errorCallback = () => {}
 
   const onSubmit = data => {
-    const newUser = { user: data }
-    axios
-      .post('http://api.airobotoedu.com/api/user/admin/add_user', newUser)
-      .then(response => {
-        // Handle successful response
-        console.log('response data is ', response.data)
-      })
-      .catch(error => {
-        // Handle error
-        console.error('An error occurred:', error)
-      })
+    const newCourse = { course: data }
+    dispatch(addNewCourse(newCourse))
 
     console.log(data)
     router.push('/user')
@@ -57,19 +49,34 @@ const CreateCourse = () => {
             {errors.name && <FormHelperText sx={{ color: 'error.main' }}>{errors.name.message}</FormHelperText>}
 
             <Typography mb={3} mt={3}>
-              programid
+              programId
             </Typography>
             <TextField
               label='Please enter your lastName'
-              name='lastName'
+              name='programId'
               fullWidth={true}
-              {...register('lastName', {
-                required: 'Last name is required',
+              {...register('programId', {
+                required: ' programId is required',
                 maxLength: { value: 20, message: 'Max is 20' }
               })}
             />
-            {errors.lastName && <FormHelperText sx={{ color: 'error.main' }}>{errors.lastName.message}</FormHelperText>}
+            {errors.programid && (
+              <FormHelperText sx={{ color: 'error.main' }}>{errors.programid.message}</FormHelperText>
+            )}
 
+            <Typography mb={3} mt={3}>
+              tutorId
+            </Typography>
+            <TextField
+              label='Please enter tutorId'
+              name='tutorId'
+              fullWidth={true}
+              {...register('tutorId', {
+                required: ' tutorId is required',
+                maxLength: { value: 20, message: 'Max is 20' }
+              })}
+            />
+            {errors.tutorId && <FormHelperText sx={{ color: 'error.main' }}>{errors.tutorId.message}</FormHelperText>}
             <Typography mb={3} mt={3}>
               Description
             </Typography>
@@ -80,7 +87,7 @@ const CreateCourse = () => {
               fullWidth={true}
             />
             {errors.description && (
-              <FormHelperText sx={{ color: 'error.main' }}>{errors.password.message}</FormHelperText>
+              <FormHelperText sx={{ color: 'error.main' }}>{errors.description.message}</FormHelperText>
             )}
 
             <Box display={'flex'} width={'100%'} mb={4}></Box>

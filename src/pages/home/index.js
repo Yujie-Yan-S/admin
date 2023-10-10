@@ -50,7 +50,7 @@ const Home = () => {
           Action
         </Box>
       </Paper>
-      {courseData.courseListFromSearch.map((item, key) => {
+      {courseData.courseList.map((item, key) => {
         return (
           <Card
             key={key}

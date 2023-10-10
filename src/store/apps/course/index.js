@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 const initialState = {
-  courseListFromSearch: [],
+  courseList: [],
   totalPage: 16,
   status: 'loading',
   error: null
@@ -18,16 +18,14 @@ export const fetchCourseBySearch = createAsyncThunk('courses/fetchCourseBySearch
 
 //post
 export const addNewCourse = createAsyncThunk('courses/addNewCourse', async params => {
-  const response = await axios.post('/apps/invoice/invoices', params)
+  const response = await axios.post('http://api.airobotoedu.com/api/course/admin/add_course', params)
 
   return response.data
 })
 
-//update
+//post
 export const updateCourse = createAsyncThunk('course/update', async params => {
-  const response = await axios.get('/apps/invoice/invoices', {
-    params
-  })
+  const response = await axios.get('http://api.airobotoedu.com/api/course/admin/update_course', params)
 
   return response.data
 })
@@ -52,7 +50,7 @@ const courseSlice = createSlice({
       .addCase(fetchCourseBySearch.fulfilled, (state, action) => {
         state.status = 'succeeded'
 
-        state.courseListFromSearch = action.payload.data.content
+        state.courseList = action.payload.data.content
         state.totalPage = action.payload.data.totalPages
       })
       .addCase(fetchCourseBySearch.rejected, (state, action) => {

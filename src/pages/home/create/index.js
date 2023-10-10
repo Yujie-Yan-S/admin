@@ -26,7 +26,7 @@ const CreateCourse = () => {
     dispatch(addNewCourse(newCourse))
 
     console.log(data)
-    router.push('/user')
+    router.push('/home')
   }
 
   return (
@@ -49,7 +49,7 @@ const CreateCourse = () => {
             {errors.name && <FormHelperText sx={{ color: 'error.main' }}>{errors.name.message}</FormHelperText>}
 
             <Typography mb={3} mt={3}>
-              programId
+              ProgramId
             </Typography>
             <TextField
               label='Please enter your lastName'
@@ -65,7 +65,7 @@ const CreateCourse = () => {
             )}
 
             <Typography mb={3} mt={3}>
-              tutorId
+              TutorId
             </Typography>
             <TextField
               label='Please enter tutorId'
@@ -77,19 +77,29 @@ const CreateCourse = () => {
               })}
             />
             {errors.tutorId && <FormHelperText sx={{ color: 'error.main' }}>{errors.tutorId.message}</FormHelperText>}
+
             <Typography mb={3} mt={3}>
               Description
             </Typography>
             <TextField
               name='description'
               label='Please enter coure description'
-              {...register('email', { required: 'description is required' })}
+              {...register('description', { required: 'description is required' })}
               fullWidth={true}
             />
             {errors.description && (
               <FormHelperText sx={{ color: 'error.main' }}>{errors.description.message}</FormHelperText>
             )}
-
+            <Typography mb={3} mt={3}>
+              Cover
+            </Typography>
+            <TextField
+              name='cover'
+              label='Please enter coure description'
+              {...register('cover', { required: 'cover img is required' })}
+              fullWidth={true}
+            />
+            {errors.cover && <FormHelperText sx={{ color: 'error.main' }}>{errors.cover.message}</FormHelperText>}
             <Box display={'flex'} width={'100%'} mb={4}></Box>
             {formError.error && <FormHelperText sx={{ color: 'error.main' }}>{codeError.error}</FormHelperText>}
 

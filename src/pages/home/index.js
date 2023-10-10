@@ -56,8 +56,8 @@ const Home = () => {
             key={key}
             id={item.id}
             name={item.name}
-            programid={item.programid}
-            tutorid={item.tutorid}
+            programid={item.programId}
+            tutorid={item.tutorId}
             description={item.description}
             imgCoverUrl={item.imgCoverUrl}
           ></Card>

@@ -25,7 +25,7 @@ export const addNewCourse = createAsyncThunk('courses/addNewCourse', async param
 
 //post
 export const updateCourse = createAsyncThunk('course/update', async params => {
-  const response = await axios.get('http://api.airobotoedu.com/api/course/admin/update_course', params)
+  const response = await axios.post('http://api.airobotoedu.com/api/course/admin/update_course', params)
 
   return response.data
 })

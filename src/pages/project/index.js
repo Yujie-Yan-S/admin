@@ -4,7 +4,8 @@ import Paper from '@mui/material/Paper'
 import { forwardRef, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllUser } from 'src/store/apps/user'
-import StudentCard from './component/StudentCard'
+import UserCard from './component/UserCard'
+
 
 const Project = () => {
   const [page, setPage] = useState(1)
@@ -48,7 +49,7 @@ const Project = () => {
       {studentsData?.studentList.map((item, key) => {
         return (
           <>
-            <StudentCard
+            <UserCard
               id={item.id}
               firstName={item.firstName}
               lastName={item.lastName}

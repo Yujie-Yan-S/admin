@@ -51,6 +51,8 @@ const Edit = () => {
                         map[item.name] = item.id;
                     });
 
+                    setNameToIdMap(map);
+
                     // 设置 ProgramList 数据
                     setProgramList(programListData);
 

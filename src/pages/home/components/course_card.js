@@ -1,28 +1,56 @@
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
-import { IconButton } from '@mui/material'
+import {Dialog, DialogActions, DialogTitle, IconButton} from '@mui/material'
 import { GridDeleteIcon } from '@mui/x-data-grid'
 import { useDispatch } from 'react-redux'
 import { fetchCourseBySearch } from 'src/store/apps/course'
 import EditIcon from '@mui/icons-material/Edit'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import Button from "@mui/material/Button";
+import {useState} from "react";
 
 const Card = props => {
   const router = useRouter()
   const dispatch = useDispatch()
   const { id, name, programid, tutorid, description, imgCoverUrl } = props
 
-  const handleDeleteClick = id => {
-    axios
-      .get(`http://api.airobotoedu.com/api/course/admin/delete_course?id=${id}`)
-      .then(response => {
-        // alert('Success')
-        dispatch(fetchCourseBySearch(`pageNum=0&pageSize=6`))
-      })
-      .catch(error => {
-        alert('Failed')
-      })
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
+  //
+  // const handleDeleteClick = id => {
+  //   axios
+  //     .get(`http://api.airobotoedu.com/api/course/admin/delete_course?id=${id}`)
+  //     .then(response => {
+  //       // alert('Success')
+  //       dispatch(fetchCourseBySearch(`pageNum=0&pageSize=6`))
+  //     })
+  //     .catch(error => {
+  //       alert('Failed')
+  //     })
+  // }
+
+
+
+  const handleDelete= ()=>{
+    axios.get(`http://api.airobotoedu.com/api/course/admin/delete_course?id=${id}`)
+        .then((response) => {
+          alert("Success")
+          dispatch(fetchCourseBySearch(`pageNum=0&pageSize=6`))
+        })
+        .catch((error) => {
+          alert('Failed')
+        });
+    setOpen(false)
   }
 
   const handleUpdateClick = id => {
@@ -55,13 +83,31 @@ const Card = props => {
       </Box>
 
       <Box width={'20%'} display={'flex'} justifyContent={'center'}>
-        <IconButton onClick={() => handleDeleteClick(id)}>
+        <IconButton onClick={() => handleClickOpen()}>
           <GridDeleteIcon />
         </IconButton>
         <IconButton onClick={() => handleUpdateClick(id)}>
           <EditIcon />
         </IconButton>
       </Box>
+
+
+      <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="draggable-dialog-title"
+      >
+        <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
+          Do you want delete course {name}
+        </DialogTitle>
+
+        <DialogActions>
+          <Button autoFocus onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button onClick={handleDelete}>Confirm</Button>
+        </DialogActions>
+      </Dialog>
     </Paper>
   )
 }

@@ -1,7 +1,7 @@
 const navigation = () => {
   return [
     {
-      title: 'Home',
+      title: 'Course',
       path: '/home',
       icon: 'mdi:home-outline',
     },
@@ -16,7 +16,18 @@ const navigation = () => {
       subject: 'acl-page',
       title: 'Access Control',
       icon: 'mdi:shield-outline',
-    }
+    },
+    {
+      title: 'User',
+      path: '/user',
+      icon: 'mdi:home-outline',
+    },
+    {
+      title: 'Project',
+      path: '/project',
+      icon: 'mdi:home-outline',
+    },
+
   ]
 }
 

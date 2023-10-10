@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3b1f3c0c-e2f0-4a02-91c3-6ddd160850f7" name="Changes" comment="add the delete confirmation for course delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/horizontal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/horizontal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/vertical/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/vertical/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/components/course_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/course_card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/create/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/edit/[id].js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/edit/[id].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/apps/course/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/apps/course/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +259,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/redux-version" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>

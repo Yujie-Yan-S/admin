@@ -3,25 +3,25 @@ import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import { forwardRef, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllUser } from 'src/store/apps/user'
-import UserCard from './component/UserCard'
-
+import ProjectCard from './component/ProjectCard'
+import { getAllProject } from 'src/store/apps/project'
 
 const Project = () => {
   const [page, setPage] = useState(1)
-  const studentsData = useSelector(state => state.student)
+  const { projectList, totalPage } = useSelector(state => state.projects)
   const dispatch = useDispatch()
 
   useEffect(() => {
     const currentQuery = `pageNum=${page - 1}&pageSize=6`
 
-    dispatch(getAllUser(currentQuery))
+    dispatch(getAllProject(currentQuery))
   }, [page])
 
   const Transition = forwardRef(function Transition(props, ref) {
     return <Slide direction='up' ref={ref} {...props} />
   })
 
+  console.log('projectList is ', projectList)
   const handlePageChange = (event, value) => {
     setPage(value)
   }
@@ -30,39 +30,39 @@ const Project = () => {
     <Box height={'100%'} width={'100%'} display={'flex'} flexDirection={'column'}>
       <Paper sx={{ display: 'flex', py: 4, width: '100%' }}>
         <Box width={'10%'} display={'flex'} justifyContent={'center'}>
-          id
+          Id
         </Box>
-        <Box width={'15%'} display={'flex'} justifyContent={'center'}>
-          firstName
+        <Box width={'5%'} display={'flex'} justifyContent={'center'}>
+          Name
         </Box>
-        <Box width={'15%'} display={'flex'} justifyContent={'center'}>
-          lastName
-        </Box>
-        <Box width={'20%'} display={'flex'} justifyContent={'center'}>
-          email
+        <Box width={'30%'} display={'flex'} justifyContent={'center'}>
+          Descrition
         </Box>
         <Box width={'20%'} display={'flex'} justifyContent={'center'}>
+          Cover
+        </Box>
+        <Box width={'10%'} display={'flex'} justifyContent={'center'}>
           {' '}
-          phoneNumber
+          Action
         </Box>
       </Paper>
-      {studentsData?.studentList.map((item, key) => {
+      {projectList.map((item, key) => {
         return (
           <>
-            <UserCard
+            <ProjectCard
+              key={key}
               id={item.id}
-              firstName={item.firstName}
-              lastName={item.lastName}
-              email={item.email}
-              phoneNumber={item.phoneNumber}
-              role={item.role}
+              name={item.name}
+              description={item.description}
+              cover={item.cover}
+              setPage={setPage}
             />
           </>
         )
       })}
 
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', padding: 2, pt: 5 }}>
-        <Pagination count={studentsData?.totalPage} page={page} onChange={handlePageChange} />
+        <Pagination count={totalPage} page={page} onChange={handlePageChange} />
       </Box>
     </Box>
   )

@@ -11,7 +11,7 @@ const initialState = {
 
 //get all
 export const getAllProject = createAsyncThunk('courses/fetchCourseBySearch', async query => {
-  const response = await axios.get(`http://api.airobotoedu.com/api/user/admin/get_user_list?${query}`)
+  const response = await axios.get(`http://api.airobotoedu.com/api/admin/project/search_project_by_name?${query}`)
 
   return response.data
 })
@@ -44,7 +44,7 @@ const projectSlice = createSlice({
       .addCase(getAllProject.fulfilled, (state, action) => {
         state.status = 'succeeded'
 
-        state.studentList = action.payload.data.content
+        state.projectList = action.payload.data.content
         state.totalPage = action.payload.data.totalPages
       })
       .addCase(getAllProject.rejected, (state, action) => {

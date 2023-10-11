@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateUser } from 'src/store/apps/user'
 import { useRouter } from 'next/router'
+import { updateProject } from 'src/store/apps/project'
 
 const ProjectById = () => {
   const dispatch = useDispatch()
@@ -19,16 +20,16 @@ const ProjectById = () => {
   const router = useRouter()
   const { id } = router.query
 
-  const { userList } = useSelector(state => state.users)
+  const { projectList } = useSelector(state => state.projects)
 
-  const user = userList.find(item => {
+  const project = projectList.find(item => {
     return item.id === parseInt(id, 10)
   })
   const errorCallback = () => {}
 
   const onSubmit = data => {
     console.log('onSubmit triggered')
-    dispatch(updateUser({ user: data }))
+    dispatch(updateProject({ project: data }))
   }
 
   return (
@@ -63,7 +64,7 @@ const ProjectById = () => {
                 maxLength: { value: 20, message: 'Max is 20' }
               })}
             />
-            {errors.firstName && <FormHelperText sx={{ color: 'error.main' }}>{errors.email.message}</FormHelperText>}
+            {errors.name && <FormHelperText sx={{ color: 'error.main' }}>{errors.name.message}</FormHelperText>}
 
             <Typography mb={3} mt={3}>
               description
@@ -77,17 +78,19 @@ const ProjectById = () => {
                 maxLength: { value: 20, message: 'Max is 20' }
               })}
             />
-            {errors.lastName && <FormHelperText sx={{ color: 'error.main' }}>{errors.email.message}</FormHelperText>}
+            {errors.description && (
+              <FormHelperText sx={{ color: 'error.main' }}>{errors.description.message}</FormHelperText>
+            )}
 
             <Typography mb={3} mt={3}>
-              Email
+              Cover
             </Typography>
             <TextField
-              label='Please enter your email'
-              {...register('email', { required: 'email is required' })}
+              label='Please upload your cover img'
+              {...register('cover', { required: 'cover img is required' })}
               fullWidth={true}
             />
-            {errors.email && <FormHelperText sx={{ color: 'error.main' }}>{errors.password.message}</FormHelperText>}
+            {errors.cover && <FormHelperText sx={{ color: 'error.main' }}>{errors.cover.message}</FormHelperText>}
 
             <Box display={'flex'} justifyContent={'center'} mt={8}>
               <Button variant='contained' type='submit' sx={{ width: '70%', mt: '3' }}>

@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { deleteUser } from 'src/store/apps/user'
 import EditIcon from '@mui/icons-material/Edit'
 import { useRouter } from 'next/router'
+import { deleteProject } from 'src/store/apps/project'
 
 const ProjectCard = props => {
   const { id, name, description, cover, setPage } = props
@@ -14,11 +15,10 @@ const ProjectCard = props => {
 
   const handleDeleteClick = id => {
     setPage(1)
-    dispatch(deleteUser(id))
+    dispatch(deleteProject(id))
   }
   const handleUpdateClick = id => {
-    console.log('update triggered')
-    router.push(`user/edit/${id}`)
+    router.push(`project/edit/${id}`)
   }
 
   return (

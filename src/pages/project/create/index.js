@@ -42,20 +42,6 @@ const CreateProject = () => {
         <Box width={'72%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
           <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
             <Typography mb={3} mt={3}>
-              id
-            </Typography>
-            <TextField
-              label='Please enter your first name'
-              name='id'
-              fullWidth={true}
-              {...register('id', {
-                required: 'id is required',
-                maxLength: { value: 20, message: 'Max is 20' }
-              })}
-            />
-            {errors.id && <FormHelperText sx={{ color: 'error.main' }}>{errors.firstName.message}</FormHelperText>}
-
-            <Typography mb={3} mt={3}>
               Name
             </Typography>
             <TextField
@@ -81,15 +67,6 @@ const CreateProject = () => {
             {errors.description && (
               <FormHelperText sx={{ color: 'error.main' }}>{errors.password.message}</FormHelperText>
             )}
-
-            <Typography mb={3} mt={3}>
-              Cover{' '}
-            </Typography>
-            <Select name='role' value={watch('role') || ''} {...register('role', { required: 'role is required' })}>
-              <MenuItem value='Student'>Student</MenuItem>
-            </Select>
-
-            {errors.role && <FormHelperText sx={{ color: 'error.main' }}>{errors.role.message}</FormHelperText>}
 
             <Box display={'flex'} width={'100%'} mb={4}></Box>
             {formError.error && <FormHelperText sx={{ color: 'error.main' }}>{codeError.error}</FormHelperText>}

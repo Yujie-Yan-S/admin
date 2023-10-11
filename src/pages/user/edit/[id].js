@@ -1,13 +1,10 @@
 import { Box, Typography, TextField, Button, FormHelperText, Checkbox } from '@mui/material'
 import { useForm } from 'react-hook-form'
-import { styled } from '@mui/material/styles'
-import Link from 'next/link'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { updateStudent, updateUser } from 'src/store/apps/user'
+import { updateUser } from 'src/store/apps/user'
+import { styled } from '@mui/material/styles'
 import { useRouter } from 'next/router'
-import { updateCourse } from 'src/store/apps/course'
 
 const UserById = () => {
   const dispatch = useDispatch()
@@ -30,8 +27,28 @@ const UserById = () => {
   })
   const errorCallback = () => {}
 
+  const handleClose = () => {
+    router.push('/user')
+  }
+
+  const VisuallyHiddenInput = styled('input')({
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: 1,
+    overflow: 'hidden',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    whiteSpace: 'nowrap',
+    width: 1
+  })
+
+  function CloudUploadIcon() {
+    return null
+  }
+
   const onSubmit = data => {
-    dispatch(updateCourse({ user: data }))
+    dispatch(updateUser({ user: { ...data, id: id } }))
     router.push('/user')
   }
 
@@ -40,7 +57,7 @@ const UserById = () => {
       <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
         <Box width={'72%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
           <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
-            <Typography mb={3} mt={3}>
+            {/* <Typography mb={3} mt={3}>
               id
             </Typography>
             <TextField
@@ -53,7 +70,7 @@ const UserById = () => {
                 maxLength: { value: 20, message: 'Max is 20' }
               })}
             />
-            {errors.id && <FormHelperText sx={{ color: 'error.main' }}>{errors.id.message}</FormHelperText>}
+            {errors.id && <FormHelperText sx={{ color: 'error.main' }}>{errors.id.message}</FormHelperText>} */}
 
             <Typography mb={3} mt={3}>
               First Name
@@ -118,9 +135,20 @@ const UserById = () => {
             <Box display={'flex'} width={'100%'} mb={4}></Box>
             {formError.error && <FormHelperText sx={{ color: 'error.main' }}>{codeError.error}</FormHelperText>}
 
-            <Box display={'flex'} justifyContent={'center'} mt={8}>
-              <Button variant='contained' type='submit' sx={{ width: '70%', mt: '3' }}>
+            <Box sx={{ my: 4 }} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'start'}>
+              <img height='250' alt='error-illustration' src={user.cover} />
+              <Button sx={{ my: 2 }} component='label' variant='contained' startIcon={<CloudUploadIcon />}>
+                Upload file
+                <VisuallyHiddenInput type='file' />
+              </Button>
+            </Box>
+
+            <Box display={'flex'} justifyContent={'space-evenly'} mt={8}>
+              <Button variant='contained' type='submit' sx={{ width: '40%', mt: '3' }}>
                 Submit{' '}
+              </Button>
+              <Button variant='contained' onClick={handleClose} sx={{ width: '40%', mt: '3' }}>
+                Cancel
               </Button>
             </Box>
           </form>

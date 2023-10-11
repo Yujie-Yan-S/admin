@@ -12,7 +12,6 @@ const initialState = {
 //get all
 export const getAllUser = createAsyncThunk('courses/fetchCourseBySearch', async query => {
   const response = await axios.get(`http://api.airobotoedu.com/api/user/admin/get_user_list?${query}`)
-  console.log('getall query is', query)
 
   return response.data
 })
@@ -29,14 +28,15 @@ export const updateUser = createAsyncThunk('updateUser', async params => {
 })
 
 // delete
-export const deleteUser = createAsyncThunk('deleteUser', async id => {
+export const deleteUser = createAsyncThunk('deleteUser', async (id, { dispatch }) => {
   const response = await axios.get(`http://api.airobotoedu.com/api/user/admin/delete_user?id=${id}`, {
     data: id
   })
+  dispatch(getAllUser(`pageNum=0&pageSize=6`))
 })
 
 const studentSlice = createSlice({
-  name: 'courses',
+  name: 'user',
   initialState,
   reducers: {},
   extraReducers: builder => {

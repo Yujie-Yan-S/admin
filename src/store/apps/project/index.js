@@ -18,7 +18,6 @@ export const getAllProject = createAsyncThunk('courses/fetchCourseBySearch', asy
 
 //post
 export const addNewProject = createAsyncThunk('appInvoice/fetchData', async params => {
-  console.log(params)
   const response = await axios.post('http://api.airobotoedu.com/api/user/admin/add_user', { user: params })
 })
 
@@ -28,8 +27,10 @@ export const updateProject = createAsyncThunk('updateProject', async params => {
 })
 
 // delete
-export const deleteProject = createAsyncThunk('appInvoice/deleteData', async id => {
+export const deleteProject = createAsyncThunk('appInvoice/deleteData', async (id, { dispatch }) => {
   const response = await axios.get(`http://api.airobotoedu.com/api/admin/project/delete_project?id=${id}`)
+  // console.log('delete project thunk triggered')
+  dispatch(getAllProject(`pageNum=0&pageSize=6`))
 })
 
 const projectSlice = createSlice({

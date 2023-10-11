@@ -1,10 +1,10 @@
 import { Box, Typography, TextField, Button, FormHelperText, Checkbox } from '@mui/material'
 import { useForm } from 'react-hook-form'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { updateUser } from 'src/store/apps/user'
 import { useRouter } from 'next/router'
 import { updateProject } from 'src/store/apps/project'
+import styled from '@emotion/styled'
 
 const ProjectById = () => {
   const dispatch = useDispatch()
@@ -27,9 +27,29 @@ const ProjectById = () => {
   })
   const errorCallback = () => {}
 
+  const handleClose = () => {
+    router.push('/project')
+  }
+
+  const VisuallyHiddenInput = styled('input')({
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: 1,
+    overflow: 'hidden',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    whiteSpace: 'nowrap',
+    width: 1
+  })
+
+  function CloudUploadIcon() {
+    return null
+  }
+
   const onSubmit = data => {
-    console.log('onSubmit triggered')
-    dispatch(updateProject({ project: data }))
+    dispatch(updateProject({ project: { ...data, id: id } }))
+    router.push('/project')
   }
 
   return (
@@ -37,7 +57,7 @@ const ProjectById = () => {
       <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
         <Box width={'72%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
           <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
-            <Typography mb={3} mt={3}>
+            {/* <Typography mb={3} mt={3}>
               id
             </Typography>
             <TextField
@@ -50,7 +70,7 @@ const ProjectById = () => {
                 maxLength: { value: 20, message: 'Max is 20' }
               })}
             />
-            {errors.id && <FormHelperText sx={{ color: 'error.main' }}>{errors.id.message}</FormHelperText>}
+            {errors.id && <FormHelperText sx={{ color: 'error.main' }}>{errors.id.message}</FormHelperText>} */}
 
             <Typography mb={3} mt={3}>
               Name
@@ -59,6 +79,7 @@ const ProjectById = () => {
               label='Please enter project name'
               name='name'
               fullWidth={true}
+              defaultValue={project.name}
               {...register('name', {
                 required: 'name is required',
                 maxLength: { value: 20, message: 'Max is 20' }
@@ -72,6 +93,7 @@ const ProjectById = () => {
             <TextField
               label='Please enter your description'
               name='description'
+              defaultValue={project.description}
               fullWidth={true}
               {...register('description', {
                 required: 'Description is required',
@@ -87,14 +109,27 @@ const ProjectById = () => {
             </Typography>
             <TextField
               label='Please upload your cover img'
+              name='cover'
+              defaultValue={project.cover}
               {...register('cover', { required: 'cover img is required' })}
               fullWidth={true}
             />
             {errors.cover && <FormHelperText sx={{ color: 'error.main' }}>{errors.cover.message}</FormHelperText>}
 
-            <Box display={'flex'} justifyContent={'center'} mt={8}>
-              <Button variant='contained' type='submit' sx={{ width: '70%', mt: '3' }}>
+            <Box sx={{ my: 4 }} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'start'}>
+              <img height='250' alt='error-illustration' src={project.cover} />
+              <Button sx={{ my: 2 }} component='label' variant='contained' startIcon={<CloudUploadIcon />}>
+                Upload file
+                <VisuallyHiddenInput type='file' />
+              </Button>
+            </Box>
+
+            <Box display={'flex'} justifyContent={'space-evenly'} mt={8}>
+              <Button variant='contained' type='submit' sx={{ width: '40%', mt: '3' }}>
                 Submit{' '}
+              </Button>
+              <Button variant='contained' onClick={handleClose} sx={{ width: '40%', mt: '3' }}>
+                Cancel
               </Button>
             </Box>
           </form>

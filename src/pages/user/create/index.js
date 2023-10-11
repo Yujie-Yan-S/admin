@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
-import { addNewStudent } from 'src/store/apps/user'
 import axios from 'axios'
 
 const CreateUser = () => {
@@ -33,7 +32,6 @@ const CreateUser = () => {
         console.error('An error occurred:', error)
       })
 
-    console.log(data)
     router.push('/user')
   }
 
@@ -111,6 +109,7 @@ const CreateUser = () => {
             </Typography>
             <Select name='role' value={watch('role') || ''} {...register('role', { required: 'role is required' })}>
               <MenuItem value='Student'>Student</MenuItem>
+              <MenuItem value='Admin'>Admin</MenuItem>
             </Select>
 
             {errors.role && <FormHelperText sx={{ color: 'error.main' }}>{errors.role.message}</FormHelperText>}

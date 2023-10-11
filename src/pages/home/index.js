@@ -7,10 +7,9 @@ import Paper from '@mui/material/Paper'
 import { forwardRef, useEffect, useState } from 'react'
 import { fetchCourseBySearch } from 'src/store/apps/course'
 import { useDispatch, useSelector } from 'react-redux'
-import IconButton from "@mui/material/IconButton";
-import AddIcon from '@mui/icons-material/Add';
-import {useRouter} from "next/router";
-
+import IconButton from '@mui/material/IconButton'
+import AddIcon from '@mui/icons-material/Add'
+import { useRouter } from 'next/router'
 
 const Home = () => {
   const [page, setPage] = useState(1)
@@ -19,7 +18,6 @@ const Home = () => {
 
   useEffect(() => {
     const currentQuery = `pageNum=${page - 1}&pageSize=6`
-
     dispatch(fetchCourseBySearch(currentQuery))
   }, [page])
 
@@ -27,26 +25,28 @@ const Home = () => {
     return <Slide direction='up' ref={ref} {...props} />
   })
 
-  const router =useRouter()
+  const router = useRouter()
   const handleChange = (event, value) => {
     setPage(value)
   }
 
-
   const handleButtonClick = () => {
     router.push({
-      pathname: `/home/create`,
-
-    });
-
-  };
+      pathname: `/home/create`
+    })
+  }
 
   return (
     <Box height={'100%'} width={'100%'} display={'flex'} flexDirection={'column'}>
-      <IconButton color="primary" aria-label="Add" onClick={handleButtonClick} sx={{justifySelf:'start', height:'auto', width:'10px', pb:4}}>
+      <IconButton
+        color='primary'
+        aria-label='Add'
+        onClick={handleButtonClick}
+        sx={{ justifySelf: 'start', height: 'auto', width: '10px', pb: 4 }}
+      >
         <AddIcon />
       </IconButton>
-      <Paper sx={{ display: 'flex', py: 4, width: '100%' }} square variant="outlined">
+      <Paper sx={{ display: 'flex', py: 4, width: '100%' }} square variant='outlined'>
         <Box width={'10%'} display={'flex'} justifyContent={'center'}>
           id
         </Box>
@@ -77,6 +77,7 @@ const Home = () => {
             tutorid={item.tutorId}
             description={item.description}
             imgCoverUrl={item.imgCoverUrl}
+            setPage={setPage}
           ></Card>
         )
       })}

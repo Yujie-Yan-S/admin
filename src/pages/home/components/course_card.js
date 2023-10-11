@@ -1,30 +1,28 @@
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
-import {Dialog, DialogActions, DialogTitle, IconButton} from '@mui/material'
+import { Dialog, DialogActions, DialogTitle, IconButton } from '@mui/material'
 import { GridDeleteIcon } from '@mui/x-data-grid'
 import { useDispatch } from 'react-redux'
 import { fetchCourseBySearch } from 'src/store/apps/course'
 import EditIcon from '@mui/icons-material/Edit'
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import Button from "@mui/material/Button";
-import {useState} from "react";
+import Button from '@mui/material/Button'
+import { useState } from 'react'
 
 const Card = props => {
   const router = useRouter()
   const dispatch = useDispatch()
-  const { id, name, programid, tutorid, description, imgCoverUrl } = props
+  const { id, name, programid, tutorid, description, setPage } = props
 
-
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const handleClickOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
   const handleClose = () => {
-    setOpen(false);
-  };
-
+    setOpen(false)
+  }
 
   //
   // const handleDeleteClick = id => {
@@ -39,17 +37,17 @@ const Card = props => {
   //     })
   // }
 
-
-
-  const handleDelete= ()=>{
-    axios.get(`http://api.airobotoedu.com/api/course/admin/delete_course?id=${id}`)
-        .then((response) => {
-          alert("Success")
-          dispatch(fetchCourseBySearch(`pageNum=0&pageSize=6`))
-        })
-        .catch((error) => {
-          alert('Failed')
-        });
+  const handleDelete = () => {
+    axios
+      .get(`http://api.airobotoedu.com/api/course/admin/delete_course?id=${id}`)
+      .then(response => {
+        alert('Success')
+        dispatch(fetchCourseBySearch(`pageNum=0&pageSize=6`))
+      })
+      .catch(error => {
+        alert('Failed')
+      })
+    setPage(1)
     setOpen(false)
   }
 
@@ -91,13 +89,8 @@ const Card = props => {
         </IconButton>
       </Box>
 
-
-      <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="draggable-dialog-title"
-      >
-        <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
+      <Dialog open={open} onClose={handleClose} aria-labelledby='draggable-dialog-title'>
+        <DialogTitle style={{ cursor: 'move' }} id='draggable-dialog-title'>
           Do you want delete course {name}
         </DialogTitle>
 

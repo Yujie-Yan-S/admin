@@ -54,6 +54,7 @@ const User = () => {
         return (
           <>
             <UserCard
+              key={key}
               id={item.id}
               firstName={item.firstName}
               lastName={item.lastName}

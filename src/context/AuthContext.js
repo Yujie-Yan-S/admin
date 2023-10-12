@@ -33,26 +33,10 @@ const AuthProvider = ({ children }) => {
       const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)
       if (storedToken) {
         setLoading(true)
-        await axios
-          .get(authConfig.meEndpoint, {
-            headers: {
-              Authorization: storedToken
-            }
-          })
-          .then(async response => {
-            setLoading(false)
-            setUser({ ...response.data.userData })
-          })
-          .catch(() => {
-            localStorage.removeItem('userData')
-            localStorage.removeItem('refreshToken')
-            localStorage.removeItem('accessToken')
-            setUser(null)
-            setLoading(false)
-            if (authConfig.onTokenExpiration === 'logout' && !router.pathname.includes('login')) {
-              router.replace('/login')
-            }
-          })
+
+        setUser(JSON.parse(storedToken))
+        setLoading(false)
+
       } else {
         setLoading(false)
       }
@@ -62,15 +46,18 @@ const AuthProvider = ({ children }) => {
   }, [])
 
   const handleLogin = (params, errorCallback) => {
+
     axios
-      .post(authConfig.loginEndpoint, params)
+      .post(authConfig.loginEndpoint, {'username': params.email,
+        'password' : params.password})
       .then(async response => {
+
         params.rememberMe
-          ? window.localStorage.setItem(authConfig.storageTokenKeyName, response.data.accessToken)
+          ? window.localStorage.setItem(authConfig.storageTokenKeyName, JSON.stringify( { id:1, role: response.data.data.admin.role.toLowerCase(),fullname: response.data.data.admin.username, email:'admin@materio.com' ,username: response.data.data.admin.username }))
           : null
         const returnUrl = router.query.returnUrl
-        setUser({ ...response.data.userData })
-        params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify(response.data.userData)) : null
+        setUser({ id:1, role: response.data.data.admin.role.toLowerCase(),fullname: response.data.data.admin.username, email:'admin@materio.com' ,username: response.data.data.admin.username })
+        params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify({username: response.data.data.admin.username})) : null
         const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
         router.replace(redirectURL)
       })

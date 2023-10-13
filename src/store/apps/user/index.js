@@ -10,14 +10,14 @@ const initialState = {
 }
 
 //get all
-export const getAllUser = createAsyncThunk('courses/fetchCourseBySearch', async query => {
+export const getAllUser = createAsyncThunk('getAllUser', async query => {
   const response = await axios.get(`http://api.airobotoedu.com/api/user/admin/get_user_list?${query}`)
 
   return response.data
 })
 
 //post
-export const addNewUser = createAsyncThunk('fetchUser', async params => {
+export const addNewUser = createAsyncThunk('addUser', async params => {
   console.log(params)
   const response = await axios.post('http://api.airobotoedu.com/api/user/admin/add_user', { user: params })
 })

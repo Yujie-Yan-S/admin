@@ -21,7 +21,7 @@ const Project = () => {
     return <Slide direction='up' ref={ref} {...props} />
   })
 
-  // console.log('projectList is ', projectList)
+  console.log('projectList is ', projectList)
   const handlePageChange = (event, value) => {
     setPage(value)
   }

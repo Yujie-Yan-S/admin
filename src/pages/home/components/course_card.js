@@ -39,7 +39,7 @@ const Card = props => {
 
   const handleDelete = () => {
     axios
-      .get(`http://api.airobotoedu.com/api/course/admin/delete_course?id=${id}`)
+      .get(`http://api.airobotoedu.com/api/admin/course/delete_course?id=${id}`)
       .then(response => {
         alert('Success')
         dispatch(fetchCourseBySearch(`pageNum=0&pageSize=6`))

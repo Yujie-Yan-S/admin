@@ -5,6 +5,8 @@ import { forwardRef, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ProjectCard from './component/ProjectCard'
 import { getAllProject } from 'src/store/apps/project'
+import IconButton from "@mui/material/IconButton";
+import AddIcon from "@mui/icons-material/Add";
 
 const Project = () => {
   const [page, setPage] = useState(1)
@@ -26,8 +28,23 @@ const Project = () => {
     setPage(value)
   }
 
+  const handleButtonClick = () => {
+    router.push({
+      pathname: `/project/create`
+    })
+  }
+
+
   return (
     <Box height={'100%'} width={'100%'} display={'flex'} flexDirection={'column'}>
+      <IconButton
+          color='primary'
+          aria-label='Add'
+          onClick={handleButtonClick}
+          sx={{ justifySelf: 'start', height: 'auto', width: '10px', pb: 4 }}
+      >
+        <AddIcon />
+      </IconButton>
       <Paper sx={{ display: 'flex', py: 4, width: '100%' }}>
         <Box width={'10%'} display={'flex'} justifyContent={'center'}>
           Id

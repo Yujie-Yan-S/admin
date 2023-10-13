@@ -69,7 +69,7 @@ const Edit = () => {
 
   const handleSave=()=>{
     if(add){
-      axios.post('http://api.airobotoedu.com/api/course/admin/add_course',
+      axios.post('http://api.airobotoedu.com/api/admin/course/add_course',
         {
           "course":
             {
@@ -101,7 +101,7 @@ const Edit = () => {
         });
     }
     else{
-      axios.post('http://api.airobotoedu.com/api/course/admin/update_course',
+      axios.post('http://api.airobotoedu.com/api/admin/course/update_course',
         {
           "course":
             {

@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b1f3c0c-e2f0-4a02-91c3-6ddd160850f7" name="Changes" comment="merged the course page and add the route">
+    <list default="true" id="3b1f3c0c-e2f0-4a02-91c3-6ddd160850f7" name="Changes" comment="fixed the key issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/@core/components/auth/AclGuard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/@core/components/auth/AclGuard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configs/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AuthContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/vertical/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/vertical/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/components/course_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/course_card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/edit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/create/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/create/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/apps/course/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/apps/course/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/apps/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/apps/user/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

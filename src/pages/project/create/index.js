@@ -22,7 +22,7 @@ const CreateProject = () => {
   const onSubmit = data => {
     const newUser = { user: data }
     axios
-      .post('http://api.airobotoedu.com/api/user/admin/add_user', newUser)
+      .post('http://api.airobotoedu.com/api/admin/user/add_user', newUser)
       .then(response => {
         // Handle successful response
         console.log('response data is ', response.data)

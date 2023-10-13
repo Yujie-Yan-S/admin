@@ -11,7 +11,7 @@ const initialState = {
 
 //get all
 export const getAllUser = createAsyncThunk('getAllUser', async query => {
-  const response = await axios.get(`http://api.airobotoedu.com/api/user/admin/get_user_list?${query}`)
+  const response = await axios.get(`http://api.airobotoedu.com/api/admin/user/get_user_list?${query}`)
 
   return response.data
 })
@@ -19,17 +19,17 @@ export const getAllUser = createAsyncThunk('getAllUser', async query => {
 //post
 export const addNewUser = createAsyncThunk('addUser', async params => {
   console.log(params)
-  const response = await axios.post('http://api.airobotoedu.com/api/user/admin/add_user', { user: params })
+  const response = await axios.post('http://api.airobotoedu.com/api/admin/user/add_user', { user: params })
 })
 
 //update
 export const updateUser = createAsyncThunk('updateUser', async params => {
-  const response = await axios.post('http://api.airobotoedu.com/api/user/admin/update_user', params)
+  const response = await axios.post('http://api.airobotoedu.com/api/admin/user/update_user', params)
 })
 
 // delete
 export const deleteUser = createAsyncThunk('deleteUser', async (id, { dispatch }) => {
-  const response = await axios.get(`http://api.airobotoedu.com/api/user/admin/delete_user?id=${id}`, {
+  const response = await axios.get(`http://api.airobotoedu.com/api/admin/user/delete_user?id=${id}`, {
     data: id
   })
   dispatch(getAllUser(`pageNum=0&pageSize=6`))

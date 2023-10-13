@@ -5,6 +5,8 @@ import { forwardRef, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllUser } from 'src/store/apps/user'
 import UserCard from './component/UserCard'
+import IconButton from "@mui/material/IconButton";
+import AddIcon from "@mui/icons-material/Add";
 
 const User = () => {
   const [page, setPage] = useState(1)
@@ -26,8 +28,23 @@ const User = () => {
     setPage(value)
   }
 
+  const handleButtonClick = () => {
+    router.push({
+      pathname: `/user/create`
+    })
+  }
+
+
   return (
     <Box height={'100%'} width={'100%'} display={'flex'} flexDirection={'column'}>
+      <IconButton
+          color='primary'
+          aria-label='Add'
+          onClick={handleButtonClick}
+          sx={{ justifySelf: 'start', height: 'auto', width: '10px', pb: 4 }}
+      >
+        <AddIcon />
+      </IconButton>
       <Paper sx={{ display: 'flex', py: 4, width: '100%' }}>
         <Box width={'10%'} display={'flex'} justifyContent={'center'}>
           id

@@ -18,17 +18,17 @@ export const fetchCourseBySearch = createAsyncThunk('courses/fetchCourseBySearch
 
 //post
 export const addNewCourse = createAsyncThunk('courses/addNewCourse', async params => {
-  const response = await axios.post('http://api.airobotoedu.com/api/admin/course/add_course', params)
+  const response = await axios.post('//api.airobotoedu.com/api/admin/course/add_course', params)
 
   return response.data
 })
 
 //post
 export const updateCourse = createAsyncThunk('course/update', async params => {
-  const response = await axios.post('http://api.airobotoedu.com/api/admin/course/update_course', params)
+  const response = await axios.post('//api.airobotoedu.com/api/admin/course/update_course', params)
 
   return response.data
-})
+});
 
 // delete
 export const deleteCourse = createAsyncThunk('course/delete', async (id, dispatch) => {

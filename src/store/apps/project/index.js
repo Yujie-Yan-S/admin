@@ -13,22 +13,24 @@ const initialState = {
 export const getAllProject = createAsyncThunk('getAllProject', async query => {
   const response = await axios.get(`http://api.airobotoedu.com/api/admin/project/search_project_by_name?${query}`)
   console.log('get project called', response.data)
-  return response.data
+
+return response.data
 })
 
 //post
 export const addNewProject = createAsyncThunk('addProject', async params => {
-  const response = await axios.post('http://api.airobotoedu.com/api/admin/project/add_project', { user: params })
+  const response = await axios.post('http://api.airobotoedu.com/api/admin/project/add_project',  params )
 })
 
 //update
 export const updateProject = createAsyncThunk('updateProject', async params => {
-  const response = await axios.post('http://api.airobotoedu.com/api/admin/project/update_project', params)
+  const response = await axios.post('//api.airobotoedu.com/api/admin/project/update_project', params)
 })
 
 // delete
 export const deleteProject = createAsyncThunk('appInvoice/deleteData', async (id, { dispatch }) => {
   const response = await axios.get(`http://api.airobotoedu.com/api/admin/project/delete_project?id=${id}`)
+
   // console.log('delete project thunk triggered')
   dispatch(getAllProject(`pageNum=0&pageSize=6`))
 })

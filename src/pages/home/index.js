@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import IconButton from '@mui/material/IconButton'
 import AddIcon from '@mui/icons-material/Add'
 import { useRouter } from 'next/router'
+import Button from "@mui/material/Button";
 
 const Home = () => {
   const [page, setPage] = useState(1)
@@ -26,6 +27,7 @@ const Home = () => {
   })
 
   const router = useRouter()
+
   const handleChange = (event, value) => {
     setPage(value)
   }
@@ -38,19 +40,18 @@ const Home = () => {
 
   return (
     <Box height={'100%'} width={'100%'} display={'flex'} flexDirection={'column'}>
-      <IconButton
-        color='primary'
-        aria-label='Add'
-        onClick={handleButtonClick}
-        sx={{ justifySelf: 'start', height: 'auto', width: '10px', pb: 4 }}
-      >
-        <AddIcon />
-      </IconButton>
+      <Button variant="contained" onClick={handleButtonClick}    sx={{fontSize:'12px',fontWeight:'500',justifySelf: 'start', height: 'auto', width: '150px' ,mb:4}}>Create Course</Button>
+      {/*<IconButton*/}
+      {/*  color='primary'*/}
+      {/*  aria-label='Add'*/}
+      {/*  onClick={handleButtonClick}*/}
+      {/*  sx={{ justifySelf: 'start', height: 'auto', width: '10px', pb: 4 }}*/}
+      {/*>*/}
+      {/*  <AddIcon />*/}
+      {/*</IconButton>*/}
       <Paper sx={{ display: 'flex', py: 4, width: '100%' }} square variant='outlined'>
-        <Box width={'10%'} display={'flex'} justifyContent={'center'}>
-          id
-        </Box>
-        <Box width={'20%'} display={'flex'} justifyContent={'center'}>
+
+        <Box width={'15%'} display={'flex'} justifyContent={'center'}>
           name
         </Box>
         <Box width={'20%'} display={'flex'} justifyContent={'center'}>

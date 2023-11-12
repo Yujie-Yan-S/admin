@@ -8,6 +8,7 @@ import styled from '@emotion/styled'
 
 const ProjectById = () => {
   const dispatch = useDispatch()
+
   const {
     register,
     handleSubmit,
@@ -19,6 +20,25 @@ const ProjectById = () => {
   const [formError, setFormError] = useState({})
   const router = useRouter()
   const { id } = router.query
+
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFilePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setFilePreview(null);
+    }
+  };
+
+  const [filePreview, setFilePreview] = useState(null);
+
 
   const { projectList } = useSelector(state => state.projects)
 
@@ -48,7 +68,13 @@ const ProjectById = () => {
   }
 
   const onSubmit = data => {
-    dispatch(updateProject({ project: { ...data, id: id } }))
+    console.log('this is data' , data)
+    const formData = new FormData();
+    formData.append('id', id);
+    formData.append('name', data.name);
+    formData.append('description', data.description);
+    formData.append('cover', selectedFile);
+    dispatch(updateProject(formData))
     router.push('/project')
   }
 
@@ -107,29 +133,18 @@ const ProjectById = () => {
             <Typography mb={3} mt={3}>
               Cover
             </Typography>
-            <TextField
-              label='Please upload your cover img'
-              name='cover'
-              defaultValue={project.cover}
-              {...register('cover', { required: 'cover img is required' })}
-              fullWidth={true}
-            />
-            {errors.cover && <FormHelperText sx={{ color: 'error.main' }}>{errors.cover.message}</FormHelperText>}
 
             <Box sx={{ my: 4 }} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'start'}>
-              <img height='250' alt='error-illustration' src={project.cover} />
+              <img height='250' alt='error-illustration' src={filePreview==null?project.cover:filePreview} />
               <Button sx={{ my: 2 }} component='label' variant='contained' startIcon={<CloudUploadIcon />}>
                 Upload file
-                <VisuallyHiddenInput type='file' />
+                <VisuallyHiddenInput type='file' onChange={handleFileChange}/>
               </Button>
             </Box>
 
-            <Box display={'flex'} justifyContent={'space-evenly'} mt={8}>
+            <Box display={'flex'} justifyContent={'start'} mt={8}>
               <Button variant='contained' type='submit' sx={{ width: '40%', mt: '3' }}>
                 Submit{' '}
-              </Button>
-              <Button variant='contained' onClick={handleClose} sx={{ width: '40%', mt: '3' }}>
-                Cancel
               </Button>
             </Box>
           </form>

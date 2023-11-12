@@ -7,6 +7,8 @@ import { getAllUser } from 'src/store/apps/user'
 import UserCard from './component/UserCard'
 import IconButton from "@mui/material/IconButton";
 import AddIcon from "@mui/icons-material/Add";
+import Button from "@mui/material/Button";
+import {useRouter} from "next/router";
 
 const User = () => {
   const [page, setPage] = useState(1)
@@ -20,6 +22,8 @@ const User = () => {
   }, [page])
 
   console.log('page is', page)
+
+  const router = useRouter()
   const Transition = forwardRef(function Transition(props, ref) {
     return <Slide direction='up' ref={ref} {...props} />
   })
@@ -37,18 +41,12 @@ const User = () => {
 
   return (
     <Box height={'100%'} width={'100%'} display={'flex'} flexDirection={'column'}>
-      <IconButton
-          color='primary'
-          aria-label='Add'
-          onClick={handleButtonClick}
-          sx={{ justifySelf: 'start', height: 'auto', width: '10px', pb: 4 }}
-      >
-        <AddIcon />
-      </IconButton>
-      <Paper sx={{ display: 'flex', py: 4, width: '100%' }}>
-        <Box width={'10%'} display={'flex'} justifyContent={'center'}>
-          id
-        </Box>
+
+
+      <Button variant="contained" onClick={handleButtonClick}    sx={{fontSize:'12px',fontWeight:'500',justifySelf: 'start', height: 'auto', width: '150px' ,mb:4}}>Create User</Button>
+
+      <Paper sx={{ display: 'flex', py: 4, width: '100%'  }} square>
+
         <Box width={'15%'} display={'flex'} justifyContent={'center'}>
           firstName
         </Box>

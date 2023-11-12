@@ -8,6 +8,7 @@ import axios from 'axios'
 const CreateUser = () => {
   const dispatch = useDispatch()
   const router = useRouter()
+
   const {
     register,
     handleSubmit,

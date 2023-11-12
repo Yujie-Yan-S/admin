@@ -4,296 +4,91 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b1f3c0c-e2f0-4a02-91c3-6ddd160850f7" name="Changes" comment="fixed the key issue">
+    <list default="true" id="1fc07738-2ae3-475c-b336-1432e2186ef4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/admin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jupyter-settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@core/layouts/components/shared-components/footer/FooterContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/@core/layouts/components/shared-components/footer/FooterContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configs/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AuthContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/horizontal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/horizontal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/vertical/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/vertical/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/components/course_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/course_card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/create/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/edit/[id].js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/edit/[id].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/component/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/component/ProjectCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/project/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/create/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/edit/[id].js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/edit/[id].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/project/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/component/UserCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/component/UserCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/user/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/create/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/edit/[id].js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/edit/[id].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/apps/course/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/apps/course/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/apps/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/apps/user/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/apps/project/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/apps/project/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/redux-version" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
+  &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2Vj6CfS1iBmWt19qTjsOEhgHKON" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2XztbHKuruobcYUWlP8euZPZW20" />
   <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/17569/IdeaProjects/admin&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/17569/IdeaProjects/admin/admin&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\17569\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-0\\232.9559.62\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\17569\\AppData\\Local\\Programs\\IntelliJ IDEA Ultimate\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\17569\IdeaProjects\admin\src\navigation" />
-      <recent name="C:\Users\17569\IdeaProjects\admin\src\layouts" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="DjangoTestsConfigurationType">
-      <module name="starter-kit" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="starter-kit" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="starter-kit" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <module name="starter-kit" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="starter-kit" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Python.FlaskServer">
-      <module name="starter-kit" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="starter-kit" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3b1f3c0c-e2f0-4a02-91c3-6ddd160850f7" name="Changes" comment="" />
-      <created>1695337015250</created>
+      <changelist id="1fc07738-2ae3-475c-b336-1432e2186ef4" name="Changes" comment="" />
+      <created>1699643805162</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695337015250</updated>
-      <workItem from="1695337016238" duration="680000" />
-      <workItem from="1695337707309" duration="5727000" />
-      <workItem from="1695345146128" duration="2738000" />
-      <workItem from="1695411405538" duration="1476000" />
-      <workItem from="1695412917044" duration="951000" />
-      <workItem from="1695414007439" duration="9418000" />
-      <workItem from="1695424974304" duration="73000" />
-      <workItem from="1695425057992" duration="99000" />
-      <workItem from="1695425174916" duration="811000" />
-      <workItem from="1695858357003" duration="273000" />
-      <workItem from="1696020272214" duration="1114000" />
-      <workItem from="1696630496192" duration="6572000" />
-      <workItem from="1696717475590" duration="32000" />
-      <workItem from="1696718645335" duration="207000" />
-      <workItem from="1696806763959" duration="1457000" />
-      <workItem from="1696894220605" duration="2580000" />
-      <workItem from="1697084679563" duration="6541000" />
+      <updated>1699643805162</updated>
+      <workItem from="1699643806435" duration="814000" />
+      <workItem from="1699658545984" duration="4636000" />
+      <workItem from="1699664801438" duration="33000" />
     </task>
-    <task id="LOCAL-00001" summary="finished the base page and dialog">
-      <option name="closed" value="true" />
-      <created>1695349612422</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1695349612422</updated>
-    </task>
-    <task id="LOCAL-00002" summary="finished the base page and dialog">
-      <option name="closed" value="true" />
-      <created>1695414718606</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1695414718606</updated>
-    </task>
-    <task id="LOCAL-00003" summary="waiting for data connection">
-      <option name="closed" value="true" />
-      <created>1695415586635</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1695415586635</updated>
-    </task>
-    <task id="LOCAL-00004" summary="finished the course admin">
-      <option name="closed" value="true" />
-      <created>1695423443703</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1695423443703</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add the delete confirmation for course delete">
-      <option name="closed" value="true" />
-      <created>1696021132857</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1696021132857</updated>
-    </task>
-    <task id="LOCAL-00006" summary="add the delete confirmation for course delete">
-      <option name="closed" value="true" />
-      <created>1696894955413</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1696894955413</updated>
-    </task>
-    <task id="LOCAL-00007" summary="merged the course page and add the route">
-      <option name="closed" value="true" />
-      <created>1696978199394</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1696978199394</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-    <MESSAGE value="finished the base page and dialog" />
-    <MESSAGE value="waiting for data connection" />
-    <MESSAGE value="finished the course admin" />
-    <MESSAGE value="add the delete confirmation for course delete" />
-    <MESSAGE value="merged the course page and add the route" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged the course page and add the route" />
   </component>
 </project>

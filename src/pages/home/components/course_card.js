@@ -20,6 +20,7 @@ const Card = props => {
   const handleClickOpen = () => {
     setOpen(true)
   }
+
   const handleClose = () => {
     setOpen(false)
   }
@@ -63,10 +64,8 @@ const Card = props => {
       square
       variant='outlined'
     >
-      <Box width={'10%'} display={'flex'} justifyContent={'center'}>
-        {id}
-      </Box>
-      <Box width={'20%'} display={'flex'} justifyContent={'center'}>
+
+      <Box width={'15%'} display={'flex'} justifyContent={'center'}>
         {name}
       </Box>
       <Box width={'20%'} display={'flex'} justifyContent={'center'}>

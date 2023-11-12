@@ -15,13 +15,16 @@ const ProjectCard = props => {
   const handleClickOpen = () => {
     setOpen(true)
   }
+
   const handleClose = () => {
     setOpen(false)
   }
+
   const handleDeleteClick = id => {
     dispatch(deleteProject(id))
     setOpen(false)
   }
+
   const handleUpdateClick = id => {
     router.push(`project/edit/${id}`)
   }
@@ -33,20 +36,17 @@ const ProjectCard = props => {
       square
       variant='outlined'
     >
-      <Box width={'10%'} display={'flex'} justifyContent={'center'}>
-        {id}
-      </Box>
-      <Box width={'5%'} display={'flex'} justifyContent={'center'}>
+      <Box width={'15%'} display={'flex'} justifyContent={'center'}>
         {name}
       </Box>
       <Box width={'30%'} display={'flex'} justifyContent={'center'}>
         {description}
       </Box>
-      <Box width={'20%'} display={'flex'} justifyContent={'center'}>
-        {cover}
+      <Box width={'20%'} height={'50px'} display={'flex'} justifyContent={'center'}>
+        <img src={cover} alt={null}/>
       </Box>
 
-      <Box width={'10%'} display={'flex'} justifyContent={'center'}>
+      <Box width={'35%'} display={'flex'} justifyContent={'center'}>
         <IconButton onClick={handleClickOpen}>
           <GridDeleteIcon />
         </IconButton>

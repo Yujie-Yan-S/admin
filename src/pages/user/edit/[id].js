@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 
 const UserById = () => {
   const dispatch = useDispatch()
+
   const {
     register,
     handleSubmit,
@@ -135,22 +136,19 @@ const UserById = () => {
             <Box display={'flex'} width={'100%'} mb={4}></Box>
             {formError.error && <FormHelperText sx={{ color: 'error.main' }}>{codeError.error}</FormHelperText>}
 
-            <Box sx={{ my: 4 }} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'start'}>
-              <img height='250' alt='error-illustration' src={user.cover} />
-              <Button sx={{ my: 2 }} component='label' variant='contained' startIcon={<CloudUploadIcon />}>
-                Upload file
-                <VisuallyHiddenInput type='file' />
-              </Button>
-            </Box>
+            {/*<Box sx={{ my: 4 }} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'start'}>*/}
+            {/*  <img height='250' alt='error-illustration' src={user.cover} />*/}
+            {/*  <Button sx={{ my: 2 }} component='label' variant='contained' startIcon={<CloudUploadIcon />}>*/}
+            {/*    Upload file*/}
+            {/*    <VisuallyHiddenInput type='file' />*/}
+            {/*  </Button>*/}
+            {/*</Box>*/}
 
-            <Box display={'flex'} justifyContent={'space-evenly'} mt={8}>
-              <Button variant='contained' type='submit' sx={{ width: '40%', mt: '3' }}>
-                Submit{' '}
-              </Button>
-              <Button variant='contained' onClick={handleClose} sx={{ width: '40%', mt: '3' }}>
-                Cancel
-              </Button>
-            </Box>
+            {/*<Box display={'flex'} justifyContent={'start'} mt={8}>*/}
+            {/*  <Button variant='contained' type='submit' sx={{ width: '40%', mt: '3' }}>*/}
+            {/*    Submit{' '}*/}
+            {/*  </Button>*/}
+            {/*</Box>*/}
           </form>
         </Box>
       </Box>

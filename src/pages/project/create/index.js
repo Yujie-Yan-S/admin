@@ -1,86 +1,157 @@
-import { Box, Typography, TextField, Button, FormHelperText, Checkbox, MenuItem, Select } from '@mui/material'
+import { Box, Typography, TextField, Button, FormHelperText, Checkbox } from '@mui/material'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import axios from 'axios'
+import {addNewProject, updateProject} from 'src/store/apps/project'
+import styled from '@emotion/styled'
 
-const CreateProject = () => {
+const ProjectById = () => {
   const dispatch = useDispatch()
-  const router = useRouter()
+
   const {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors }
   } = useForm()
 
   const [formError, setFormError] = useState({})
+  const router = useRouter()
+  const { id } = router.query
 
-  const errorCallback = () => {}
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFilePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setFilePreview(null);
+    }
+  };
+
+  const [filePreview, setFilePreview] = useState(null);
+
+
+  // const { projectList } = useSelector(state => state.projects)
+
+  // const project = projectList.find(item => {
+  //   return item.id === parseInt(id, 10)
+  // })
+  // const errorCallback = () => {}
+
+  const handleClose = () => {
+    router.push('/project')
+  }
+
+  const VisuallyHiddenInput = styled('input')({
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: 1,
+    overflow: 'hidden',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    whiteSpace: 'nowrap',
+    width: 1
+  })
+
+  function CloudUploadIcon() {
+    return null
+  }
 
   const onSubmit = data => {
-    const newUser = { user: data }
-    axios
-      .post('http://api.airobotoedu.com/api/admin/user/add_user', newUser)
-      .then(response => {
-        // Handle successful response
-        console.log('response data is ', response.data)
-      })
-      .catch(error => {
-        // Handle error
-        console.error('An error occurred:', error)
-      })
-
-    console.log(data)
-    router.push('/user')
+    console.log('this is data' , data)
+    const formData = new FormData();
+    formData.append('id', id);
+    formData.append('name', data.name);
+    formData.append('description', data.description);
+    formData.append('cover', selectedFile);
+    dispatch(addNewProject(formData))
+    router.push('/project')
   }
 
   return (
-    <>
-      <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
-        <Box width={'72%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
-          <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
-            <Typography mb={3} mt={3}>
-              Name
+      <>
+        <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
+          <Box width={'72%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+            <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
+              {/* <Typography mb={3} mt={3}>
+              id
             </Typography>
             <TextField
-              label='Please enter project name'
-              name='name'
+              label='Please enter your first name'
+              name='id'
               fullWidth={true}
-              {...register('name', {
-                required: ' project name is required',
+              defaultValue={id}
+              {...register('id', {
+                required: 'id is required',
                 maxLength: { value: 20, message: 'Max is 20' }
               })}
             />
-            {errors.lastName && <FormHelperText sx={{ color: 'error.main' }}>{errors.lastName.message}</FormHelperText>}
+            {errors.id && <FormHelperText sx={{ color: 'error.main' }}>{errors.id.message}</FormHelperText>} */}
 
-            <Typography mb={3} mt={3}>
-              description
-            </Typography>
-            <TextField
-              name='description'
-              label='Please enter peoject description'
-              {...register('description', { required: 'description is required' })}
-              fullWidth={true}
-            />
-            {errors.description && (
-              <FormHelperText sx={{ color: 'error.main' }}>{errors.password.message}</FormHelperText>
-            )}
+              <Typography mb={3} mt={3}>
+                Name
+              </Typography>
+              <TextField
+                  label='Please enter project name'
+                  name='name'
+                  fullWidth={true}
+                  // defaultValue={project.name}
+                  {...register('name', {
+                    required: 'name is required',
+                    maxLength: { value: 20, message: 'Max is 20' }
+                  })}
+              />
+              {errors.name && <FormHelperText sx={{ color: 'error.main' }}>{errors.name.message}</FormHelperText>}
 
-            <Box display={'flex'} width={'100%'} mb={4}></Box>
-            {formError.error && <FormHelperText sx={{ color: 'error.main' }}>{codeError.error}</FormHelperText>}
+              <Typography mb={3} mt={3}>
+                description
+              </Typography>
+              <TextField
+                  label='Please enter your description'
+                  name='description'
+                  // defaultValue={project.description}
+                  fullWidth={true}
+                  {...register('description', {
+                    required: 'Description is required',
+                    maxLength: { value: 20, message: 'Max is 20' }
+                  })}
+              />
+              {errors.description && (
+                  <FormHelperText sx={{ color: 'error.main' }}>{errors.description.message}</FormHelperText>
+              )}
 
-            <Box display={'flex'} justifyContent={'center'} mt={8}>
-              <Button variant='contained' type='submit' sx={{ width: '70%', mt: '3' }}>
-                Submit{' '}
-              </Button>
-            </Box>
-          </form>
+              <Typography mb={3} mt={3}>
+                Cover
+              </Typography>
+
+              <Box sx={{ my: 4 }} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'start'}>
+                <img height='250' alt='error-illustration' src={filePreview} />
+                <Button sx={{ my: 2 }} component='label' variant='contained' startIcon={<CloudUploadIcon />}>
+                  Upload file
+                  <VisuallyHiddenInput type='file' onChange={handleFileChange}/>
+                </Button>
+              </Box>
+
+              <Box display={'flex'} justifyContent={'start'} mt={8}>
+                <Button variant='contained' type='submit' sx={{ width: '40%', mt: '3' }}>
+                  Submit{' '}
+                </Button>
+              </Box>
+            </form>
+          </Box>
         </Box>
-      </Box>
-    </>
+      </>
   )
 }
 
-export default CreateProject
+export default ProjectById

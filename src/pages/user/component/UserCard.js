@@ -17,9 +17,11 @@ const UserCard = props => {
   const handleClickOpen = () => {
     setOpen(true)
   }
+
   const handleClose = () => {
     setOpen(false)
   }
+
   const handleDeleteClick = id => {
     dispatch(deleteUser(id))
     setOpen(false)
@@ -37,9 +39,7 @@ const UserCard = props => {
       square
       variant='outlined'
     >
-      <Box width={'10%'} display={'flex'} justifyContent={'center'}>
-        {id}
-      </Box>
+
       <Box width={'15%'} display={'flex'} justifyContent={'center'}>
         {firstName}
       </Box>

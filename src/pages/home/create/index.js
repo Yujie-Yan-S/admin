@@ -141,7 +141,7 @@ const CourseById = () => {
                     maxLength: { value: 20, message: 'Max is 20' }
                   })}
               />
-              {errors.firstName && <FormHelperText sx={{ color: 'error.main' }}>{errors.email.message}</FormHelperText>}
+              {errors.name && <FormHelperText sx={{ color: 'error.main' }}>This is required</FormHelperText>}
 
               <Typography mb={3} mt={3}>
                 programid
@@ -180,10 +180,11 @@ const CourseById = () => {
               <TextField
                   label='Please enter course tutorid'
                   // defaultValue={course.tutorId}
-                  {...register('tutorid', { required: 'email is required' })}
+                  {...register('tutorid', { required: 'tutorid is required' })}
                   fullWidth={true}
               />
-              {errors.tutorid && <FormHelperText sx={{ color: 'error.main' }}>{errors.password.message}</FormHelperText>}
+              {/*<div>{'this is errors '+errors}</div>*/}
+              {errors.tutorid && <FormHelperText sx={{ color: 'error.main' }}>This is required</FormHelperText>}
 
               <Typography mb={3} mt={3}>
                 description
@@ -191,10 +192,13 @@ const CourseById = () => {
               <TextField
                   label='Please enter course description'
                   // defaultValue={course.description}
-                  {...register('description')}
+                  {...register('description'  ,{
+                    required: 'description is required'
+                  })
+                }
                   fullWidth={true}
               />
-              {errors.password && <FormHelperText sx={{ color: 'error.main' }}>{errors.password.message}</FormHelperText>}
+              {errors.description && <FormHelperText sx={{ color: 'error.main' }}>This is required</FormHelperText>}
 
               <Box sx={{ my: 4 }} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'start'}>
                 <img height='250' alt='error-illustration' src={filePreview} />

@@ -49,16 +49,11 @@ const AuthProvider = ({ children }) => {
     axios
       .post(authConfig.loginEndpoint, { username: params.email, password: params.password })
       .then(async response => {
+        console.log(response.data.data.admin.password)
         params.rememberMe
           ? window.localStorage.setItem(
               authConfig.storageTokenKeyName,
-              JSON.stringify({
-                id: 1,
-                role: response.data.data.admin.role.toLowerCase(),
-                fullname: response.data.data.admin.username,
-                email: 'admin@materio.com',
-                username: response.data.data.admin.username
-              })
+            response.data.data.admin.password
             )
           : null
         const returnUrl = router.query.returnUrl

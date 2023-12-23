@@ -4,37 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fc07738-2ae3-475c-b336-1432e2186ef4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/admin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jupyter-settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="1fc07738-2ae3-475c-b336-1432e2186ef4" name="Changes" comment="11.11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/@core/layouts/components/shared-components/footer/FooterContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/@core/layouts/components/shared-components/footer/FooterContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configs/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AuthContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/horizontal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/horizontal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/vertical/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/vertical/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/components/course_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/course_card.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/create/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/edit/[id].js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/edit/[id].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/project/component/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/component/ProjectCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/project/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/create/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/project/edit/[id].js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/edit/[id].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/project/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/component/UserCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/component/UserCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/create/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/edit/[id].js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/edit/[id].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/apps/course/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/apps/course/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/apps/project/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/apps/project/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,10 +58,37 @@
       <workItem from="1699643806435" duration="814000" />
       <workItem from="1699658545984" duration="4636000" />
       <workItem from="1699664801438" duration="33000" />
+      <workItem from="1699754616787" duration="26000" />
+      <workItem from="1702076693224" duration="2389000" />
+      <workItem from="1703293988114" duration="1629000" />
     </task>
+    <task id="LOCAL-00001" summary="11.11">
+      <option name="closed" value="true" />
+      <created>1699754636710</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699754636710</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="11.11" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.11" />
   </component>
 </project>

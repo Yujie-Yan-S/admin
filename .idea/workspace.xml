@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fc07738-2ae3-475c-b336-1432e2186ef4" name="Changes" comment="11.11">
+      <change afterPath="$PROJECT_DIR$/src/pages/lesson/component/LessonCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/lesson/create/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/lesson/edit/[id].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/lesson/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/apps/lesson/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AuthContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/create/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/vertical/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/vertical/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -32,13 +42,13 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/17569/IdeaProjects/admin/admin&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/shuxing/Documents/GitHub/admin&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\17569\\AppData\\Local\\Programs\\IntelliJ IDEA Ultimate\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -61,6 +71,14 @@
       <workItem from="1699754616787" duration="26000" />
       <workItem from="1702076693224" duration="2389000" />
       <workItem from="1703293988114" duration="1629000" />
+      <workItem from="1703889465510" duration="4626000" />
+      <workItem from="1704146345252" duration="631000" />
+      <workItem from="1705285224087" duration="8759000" />
+      <workItem from="1705370473753" duration="11807000" />
+      <workItem from="1705386040393" duration="317000" />
+      <workItem from="1705386561741" duration="15225000" />
+      <workItem from="1705620794711" duration="1244000" />
+      <workItem from="1705622794864" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="11.11">
       <option name="closed" value="true" />

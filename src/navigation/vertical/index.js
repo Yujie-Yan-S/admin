@@ -17,6 +17,12 @@ const navigation = () => {
       path: '/project',
       icon: 'mdi:school',
     },
+    {
+      title: 'Lesson',
+      path: '/lesson',
+      icon: 'mdi:school-outline',
+
+    }
 
   ]
 }
